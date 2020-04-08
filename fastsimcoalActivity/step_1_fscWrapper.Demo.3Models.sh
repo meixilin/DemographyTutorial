@@ -31,21 +31,21 @@ sfs=generic.SFSForDemographyWorkshop_MAFpop0.obs #  name of SFS
 
 ###################### Carry out analysis ##################
 # note: you could loop over all your models, but I've kept them modular here to keep things step-by-step
-############ 1 Epoch Model #############
-model=1D.1Epoch
-modelDir=$wd/fscResults/$model 
-mkdir -p $modelDir # make the directory for your model inference
+# ############ 1 Epoch Model #############
+# model=1D.1Epoch
+# modelDir=$wd/fscResults/$model 
+# mkdir -p $modelDir # make the directory for your model inference
 
 
-for i in $(seq 1 $numReps) # this will iterate over your numReps replicates (e.g. 10)
-do
+# for i in $(seq 1 $numReps) # this will iterate over your numReps replicates (e.g. 10)
+# do
 
-mkdir -p $modelDir/run_${i} # make a directory for each replicate
-cd $modelDir/run_${i} # you have to physically be in the inference directory (annoying) 
-/bin/cp $wd/SFS/$sfs $modelDir/run_${i}/${model}_MAFpop0.obs # your SFS needs to be in the inference directory and needs to have the same name as your model files (annoying, I know!)
-/bin/cp $wd/modelFiles/${model}.tpl $wd/modelFiles/${model}.est $modelDir/run_${i} # copy your model files into the run's directories
-$fsc -t ${model}.tpl -n ${numCoalTrees} -m -e ${model}.est -M -L ${numECM} -c${cores} -q # run fastsimcoal with 100,000 coalescent trees and 40 ecm cycles
-done
+# mkdir -p $modelDir/run_${i} # make a directory for each replicate
+# cd $modelDir/run_${i} # you have to physically be in the inference directory (annoying) 
+# /bin/cp $wd/SFS/$sfs $modelDir/run_${i}/${model}_MAFpop0.obs # your SFS needs to be in the inference directory and needs to have the same name as your model files (annoying, I know!)
+# /bin/cp $wd/modelFiles/${model}.tpl $wd/modelFiles/${model}.est $modelDir/run_${i} # copy your model files into the run's directories
+# $fsc -t ${model}.tpl -n ${numCoalTrees} -m -e ${model}.est -M -L ${numECM} -c${cores} -q # run fastsimcoal with 100,000 coalescent trees and 40 ecm cycles
+# done
 
 ############ 2 Epoch Model #############
 model=1D.2Epoch
@@ -65,17 +65,17 @@ done
 
 
 
-############ 3 Epoch Model #############
-model=1D.3Epoch
-modelDir=$wd/fscResults/$model 
-mkdir -p $modelDir # make the directory for your model inference
+# ############ 3 Epoch Model #############
+# model=1D.3Epoch
+# modelDir=$wd/fscResults/$model 
+# mkdir -p $modelDir # make the directory for your model inference
 
-for i in $(seq 1 $numReps) # this will iterate over your numReps replicates (e.g. 10)
-do
+# for i in $(seq 1 $numReps) # this will iterate over your numReps replicates (e.g. 10)
+# do
 
-mkdir -p $modelDir/run_${i} # make a directory for each replicate
-cd $modelDir/run_${i} # you have to physically be in the inference directory (annoying) 
-/bin/cp $wd/SFS/$sfs $modelDir/run_${i}/${model}_MAFpop0.obs # your SFS needs to be in the inference directory and needs to have the same name as your model files (annoying, I know!)
-/bin/cp $wd/modelFiles/${model}.tpl $wd/modelFiles/${model}.est $modelDir/run_${i} # copy your model files into the run's directories
-$fsc -t ${model}.tpl -n ${numCoalTrees} -m -e ${model}.est -M -L ${numECM} -c${cores} -q # run fastsimcoal with 100,000 coalescent trees and 40 ecm cycles
-done
+# mkdir -p $modelDir/run_${i} # make a directory for each replicate
+# cd $modelDir/run_${i} # you have to physically be in the inference directory (annoying) 
+# /bin/cp $wd/SFS/$sfs $modelDir/run_${i}/${model}_MAFpop0.obs # your SFS needs to be in the inference directory and needs to have the same name as your model files (annoying, I know!)
+# /bin/cp $wd/modelFiles/${model}.tpl $wd/modelFiles/${model}.est $modelDir/run_${i} # copy your model files into the run's directories
+# $fsc -t ${model}.tpl -n ${numCoalTrees} -m -e ${model}.est -M -L ${numECM} -c${cores} -q # run fastsimcoal with 100,000 coalescent trees and 40 ecm cycles
+# done
