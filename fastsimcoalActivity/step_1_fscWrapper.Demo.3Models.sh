@@ -18,11 +18,11 @@ numECM=20 # number of ECM optimization cycles. should be 40+ if you're doing thi
 cores=4 # number of cores parallelize
 
 ################### Set your paths #################################################
-fsc=/path/to/fsc26 # <-- YOU MUST UPDATE THIS PATH: provide path to where you installed fsc26
+fsc=~/bin/fsc26 # <-- YOU MUST UPDATE THIS PATH: provide path to where you installed fsc26
 #fsc=/Applications/fsc26_mac64/fsc26 #example on my home computer 
 #fsc=~/bin/fsc26 # example on my hoffman
 
-wd=/path/to/working/directory #  <-- YOU MUST UPDATE THIS PATH to your fastsimcoalActivity directory that contains the SFS and all the tpl and est files
+wd=/u/project/rwayne/meixilin/DemographyTutorial/fastsimcoalActivity #  <-- YOU MUST UPDATE THIS PATH to your fastsimcoalActivity directory that contains the SFS and all the tpl and est files
 #wd=/Users/annabelbeichman/Documents/UCLA/DemographyWorkshop/ActivityMaterials/fastsimcoalActivity # example on my computer
 #wd=$SCRATCH/DemographyWorkshop/ActivityMaterials/fastsimcoalActivity/ # example on my hoffman 
 
