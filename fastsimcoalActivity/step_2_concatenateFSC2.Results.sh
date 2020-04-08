@@ -2,11 +2,13 @@
 # results will end up in :
 # $wd/resultsSummaries/$model
 # want a table for each model/population with all results
-models='1D.1Epoch 1D.2Epoch 1D.3Epoch'
+# models='1D.1Epoch1D.2Epoch 1D.3Epoch'
+models='1D.2Epoch'
 numReps=10 # number of replicates. should be 50+ if you're doing this for real
 
-wd=/path/to/working/directory  # <-- you must update this path!
+# wd=/path/to/working/directory  # <-- you must update this path!
 #wd=/Users/annabelbeichman/Documents/UCLA/DemographyWorkshop/ActivityMaterials/fastsimcoalActivity
+wd=/u/project/rwayne/meixilin/DemographyTutorial/fastsimcoalActivity
 
 resultsDir=$wd/fscResults
 mkdir -p $resultsDir/resultsSummaries
